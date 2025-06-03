@@ -1,0 +1,441 @@
+/* --- Reset Básico e Estilos Globais --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Um cinza claro para o fundo */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 0 20px; /* Adiciona um padding nas laterais para telas menores */
+}
+
+/* --- Cabeçalho Principal --- */
+.main-header {
+    background-color: #2c3e50; /* Azul escuro */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+/* --- Navegação Principal --- */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0; /* Espaço acima da navegação */
+    display: flex; /* Para alinhar os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens da navegação */
+    gap: 25px; /* Espaço entre os itens da navegação */
+}
+
+.main-nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.main-nav li a:hover,
+.main-nav li a.active {
+    background-color: #34495e; /* Cor mais clara ao passar o mouse ou item ativo */
+}
+
+/* --- Conteúdo Principal (Geral) --- */
+.main-content {
+    padding: 30px 0;
+    min-height: calc(100vh - 180px); /* Garante que o conteúdo ocupe a altura da tela */
+    /* 180px é uma estimativa do tamanho do header + footer, ajuste conforme necessário */
+}
+
+/* --- Dashboard/Visão Geral --- */
+.dashboard-overview h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+    gap: 30px; /* Espaço entre os cartões */
+    justify-content: center; /* Centraliza os cartões dentro do grid se não preencherem tudo */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #34495e;
+    font-size: 1.5rem;
+}
+
+.card .metric {
+    font-size: 3em;
+    font-weight: bold;
+    color: #27ae60; /* Verde para métricas positivas */
+    margin: 10px 0;
+}
+
+.card .metric.danger {
+    color: #e74c3c; /* Vermelho para métricas de perigo (baixo estoque) */
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Alinha o texto das listas à esquerda dentro do cartão */
+}
+
+.card ul li {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.card ul li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* --- Rodapé Principal --- */
+.main-footer {
+    background-color: #34495e; /* Azul mais escuro */
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9em;
+}
+
+/* --- Seção de Produtos --- */
+.products-list {
+    margin-top: 20px;
+}
+
+.products-list h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+/* --- Barra de Controle (Pesquisa e Botão) --- */
+.controls-bar {
+    display: flex; /* Para alinhar o input e o botão horizontalmente */
+    justify-content: space-between; /* Espaça os elementos para as extremidades */
+    align-items: center; /* Alinha verticalmente no centro */
+    margin-bottom: 25px;
+    gap: 15px; /* Espaço entre os elementos */
+    flex-wrap: wrap; /* Permite que os elementos quebrem a linha em telas pequenas */
+}
+
+.search-input {
+    flex-grow: 1; /* Permite que o input cresça e ocupe o espaço disponível */
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    max-width: 400px; /* Limita a largura máxima do input */
+}
+
+/* --- Estilos Gerais de Botões --- */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* Impede que o texto do botão quebre a linha */
+    text-decoration: none; /* <--- Adicione esta linha aqui para remover o sublinhado */
+    display: inline-block; /* <--- Adicione esta linha também, se ainda não tiver, para que 'padding' funcione em links */
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+/* Botão Primário (Ex: Adicionar Produto) */
+.btn-primary {
+    background-color: #27ae60; /* Verde */
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #219d55;
+}
+
+/* Botão Secundário (Ex: Editar) */
+.btn-secondary {
+    background-color: #3498db; /* Azul */
+    color: #fff;
+    margin-right: 5px; /* Espaço entre os botões de ação */
+}
+
+.btn-secondary:hover {
+    background-color: #2980b9;
+}
+
+/* Botão de Perigo (Ex: Excluir) */
+.btn-danger {
+    background-color: #e74c3c; /* Vermelho */
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* --- Tabela de Produtos --- */
+.table-container {
+    overflow-x: auto; /* Adiciona scroll horizontal se a tabela for muito larga */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%; /* Faz a tabela ocupar 100% da largura do seu container */
+    border-collapse: collapse; /* Remove o espaço entre as bordas das células */
+    background-color: #fff;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Borda inferior para cada linha */
+}
+
+table th {
+    background-color: #ecf0f1; /* Cinza claro para o cabeçalho */
+    color: #2c3e50;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+table tbody tr:hover {
+    background-color: #f0f8ff; /* Fundo mais claro ao passar o mouse sobre a linha */
+}
+
+/* Alinhamento da coluna de ações */
+table td:last-child {
+    text-align: center; /* Centraliza os botões na coluna "Ações" */
+    white-space: nowrap; /* Impede que os botões quebrem a linha */
+}
+
+/* --- Formulários (Geral) --- */
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 600px; /* Limita a largura do formulário */
+    margin: 0px auto 40px auto; /* Centraliza o formulário e adiciona margem inferior */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Faz o label ocupar a linha inteira */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
+}
+
+.form-group input[type="number"] {
+    max-width: 150px; /* Limita a largura do campo de quantidade */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px;
+}
+
+.movement-form .btn-primary {
+    width: 100%; /* Faz o botão de submit ocupar toda a largura do formulário */
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+/* --- Título das Últimas Movimentações --- */
+.recent-movements-title {
+    text-align: center;
+    margin: 40px 0 25px 0;
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+/* --- Estilos para o tipo de movimentação na tabela --- */
+.movement-type-entry {
+    color: #27ae60; /* Verde para entrada */
+    font-weight: bold;
+}
+
+.movement-type-exit {
+    color: #e74c3c; /* Vermelho para saída */
+    font-weight: bold;
+}
+
+/* --- Seção de Relatórios --- */
+.reports-section {
+    margin-top: 20px;
+}
+
+.reports-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+/* Os estilos para .form-container, .form-group, inputs, selects e buttons
+   já estão definidos nas seções anteriores e se aplicarão aqui. */
+
+/* Estilos específicos para campos de filtro adicionais em relatórios */
+#periodoFields {
+    display: flex; /* Para alinhar os campos de data horizontalmente */
+    gap: 20px; /* Espaço entre os campos de data */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
+}
+
+#periodoFields label {
+    flex-basis: 100%; /* Faz o label ocupar a linha inteira em flex */
+    margin-bottom: 5px; /* Ajusta a margem do label */
+}
+
+#periodoFields input[type="date"] {
+    flex-grow: 1; /* Permite que os inputs de data cresçam */
+    min-width: 180px; /* Largura mínima para os inputs de data */
+}
+
+#produtoField {
+    margin-bottom: 20px;
+}
+
+
+/* --- Área de Resultados do Relatório --- */
+.report-results {
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.report-results h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #34495e;
+    font-size: 1.6rem;
+}
+
+/* Reutiliza os estilos de tabela já existentes */
+.report-results .table-container {
+    /* Já estilizado nas regras gerais de tabela, apenas garante que o container tem as margens corretas */
+    margin-top: 20px;
+}
+
+/* Estilos para o status na tabela de relatório de estoque */
+.status-ok {
+    color: #27ae60; /* Verde */
+    font-weight: bold;
+}
+
+.status-warning {
+    color: #f39c12; /* Laranja */
+    font-weight: bold;
+}
+
+.status-danger {
+    color: #e74c3c; /* Vermelho */
+    font-weight: bold;
+}
+
+.no-results {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* --- Seção de Formulário de Produto --- */
+.product-form-section {
+    margin-top: 20px;
+}
+
+.product-form-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+/* Os estilos para .form-container, .form-group, inputs, selects e buttons
+   já estão definidos nas seções anteriores e se aplicarão aqui. */
+
+/* Ajuste para o botão Cancelar (se for um link <a>) */
+.cancel-btn {
+    display: inline-block; /* Para que padding e margem funcionem como um botão */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove sublinhado de link */
+    margin-top: 15px; /* Espaçamento do botão Salvar */
+    background-color: #95a5a6; /* Cor cinza para cancelar */
+}
+
+.cancel-btn:hover {
+    background-color: #7f8c8d;
+}
+
+/* Se quiser alinhar os botões lado a lado */
+.product-form .btn {
+    width: auto; /* Anula o 100% do botão de movimentação */
+    display: inline-block; /* Alinha na mesma linha */
+    margin-right: 15px; /* Espaço entre os botões */
+}
+
+.product-form .btn-primary {
+    width: auto; /* Anula o 100% específico do botão de movimentação */
+    padding: 10px 20px; /* Volta ao padding padrão do btn */
+    font-size: 1em; /* Volta ao tamanho padrão da fonte */
+}
