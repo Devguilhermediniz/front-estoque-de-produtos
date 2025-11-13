@@ -1,1 +1,0 @@
-# front-estoque-de-produtos
